@@ -110,8 +110,8 @@ const config: Config = {
                     title: "More",
                     items: [
                         {
-                            label: "Blog",
-                            to: "/blog",
+                            label: "Visit our Website",
+                            to: "https://somnog.so",
                         },
                         {
                             label: "GitHub",
