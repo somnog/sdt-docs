@@ -8,20 +8,21 @@ import Heading from "@theme/Heading";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {/* {siteConfig.title} */}
-          Track 3: Software Development Track
+          SomNOG7 Track3: Software Development
         </Heading>
+        <p className="hero__subtitle">
+          Learn modern full-stack development using the MERN stack in this hands-on workshop.
+        </p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
+              className="button button--secondary button--lg"
+              to="/docs/intro"
           >
-            d Resources
+            Documentation Resources
           </Link>
         </div>
       </div>
@@ -30,11 +31,11 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+  const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      <Layout
+        title={`Welcome to ${siteConfig.title || "Software Development Track"}`}
+        description="Join us for a 3-day workshop on full-stack development using the MERN stack."
     >
       <HomepageHeader />
       <main>
