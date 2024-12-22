@@ -23,8 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          Students will explore advanced topics in software development and begin working on their projects. Key concepts will include system design, architecture, and best practices for project development.
       </>
     ),
   },
@@ -33,8 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          Learn about Docker, its containerization features, and how to use it for development. We'll also dive into Continuous Deployment (CD) pipelines.
       </>
     ),
   },
