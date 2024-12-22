@@ -1,0 +1,8 @@
+{
+  "label": "Day One",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Welcome to Day One! In this session, we will cover the core concepts of software development. Learn how to get started with building applications, setting up your development environment, and understand the key methodologies and tools that will guide you throughout the track. By the end of Day One, you'll have a solid foundation to begin developing and deploying modern web applications."
+  }
+}
