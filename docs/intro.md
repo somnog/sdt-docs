@@ -1,47 +1,50 @@
 ---
 sidebar_position: 1
 ---
+### Welcome to the Software Development Track
 
-# Tutorial Intro
+#### Congratulations on being selected!
 
-Let's discover **Docusaurus in less than 5 minutes**.
+We are thrilled to have you as part of this exclusive workshop, chosen from a competitive pool of applicants. Over the upcoming sessions, we will immerse ourselves in the exciting world of modern web application development. Together, we will explore essential tools, frameworks, and best practices to build, deploy, and scale web applications that meet the demands of the modern tech landscape.
 
-## Getting Started
+### About the Track
 
-Get started by **creating a new site**.
+This Software Development Track is designed to give you in-depth knowledge and hands-on experience with advanced technologies for building and deploying web applications. Whether you are aiming to enhance your skills or take your development experience to the next level, this track will help you get there.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+You will gain expertise in:
 
-### What you'll need
+- **Frontend Development**: Develop dynamic and responsive UIs using **React**.
+- **Backend Development**: Build **RESTful APIs** with **Express** to serve your application.
+- **Database Management**: Learn how to store and manage your data with **MongoDB**.
+- **Containerization**: Master the use of **Docker** to containerize your applications for easy deployment and scaling.
+- **Continuous Deployment**: Use **GitHub Actions** for **CI/CD pipelines** to automate testing, building, and deployment.
+- **Security & Infrastructure**: Explore critical tools and concepts such as **Nginx**, **Let’s Encrypt**, **firewalls**, and **SSH** to secure and optimize your application’s infrastructure.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### Meet the Facilitators
 
-## Generate a new site
+Our expert facilitators will guide you throughout the track, ensuring you gain both theoretical knowledge and practical experience:
 
-Generate a new Docusaurus site using the **classic template**.
+- **Mohamed A. Abdisamad** – NIRA, Track Lead
+- **Eng. Bashir Ahmed Mohamud** – Software Developer, Tabaarak ICT Solutions
+- **Abdulshakur Ahmed** – CTO, SPS
+- **Eng. Hassan Omar Mohamed** – MERN Stack Developer, SIU
+- **Eng. Mohamed Abdirahman Ahmed** – Software Developer, Tabaarak ICT Solutions
+- **Abdihakim Ismail Mohamed** – SomaliREN
 
-The classic template will automatically be added to your project after you run the command:
+### Your Expectations
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+As you embark on this track, think about your goals. Do you want to:
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+- Master full-stack development?
+- Learn efficient deployment practices?
+- Deepen your knowledge of modern tools and frameworks?
+- Build real-world applications?
+- Connect with peers and industry experts?
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+This is your chance to gain the skills and knowledge that will propel your career forward.
 
-## Start your site
+We are excited to have you on board, and we can’t wait to get started on this learning journey together!
 
-Run the development server:
+---
 
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Let’s dive into building the future of web development!
