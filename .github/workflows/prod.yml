@@ -1,0 +1,84 @@
+name: Production Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  # ───────────────────────────────────────────────────────────
+  # 1) BUILD JOB
+  #    - Checks out code
+  #    - Logs into Docker
+  #    - Builds 3 Docker images (frontend, backend, database)
+  # ───────────────────────────────────────────────────────────
+  build:
+    runs-on: [self-hosted, prod]
+
+    # Example strategy if you want to test different Node versions.
+    # Otherwise, you can omit the strategy matrix.
+    strategy:
+      matrix:
+        node-version: [20.x]
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: (Optional) Docker Permissions
+        run: |
+          # Example (commented out). If your runner user needs
+          # to be in the docker group:
+          # sudo usermod -a -G docker $USER
+
+      - name: Docker Login
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build docs
+        run: |
+          docker build
+
+      - name: Build application
+        run: |
+          docker build -t somnog/sdt-docs:latest .
+
+  # ───────────────────────────────────────────────────────────
+  # 2) PUSH JOB
+  #    - Runs AFTER the build job completes successfully
+  #    - Pushes images to Docker Hub
+  # ───────────────────────────────────────────────────────────
+  push_images:
+    runs-on: [self-hosted, prod]
+    needs: build # Ensures this job waits for 'build' to finish
+
+    steps:
+      - name: Docker Login
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push all images
+        run: |
+          docker push somnog/sdt-docs:latest
+
+  # ───────────────────────────────────────────────────────────
+  # 3) DEPLOY JOB
+  #    - Runs AFTER the images have been pushed
+  #    - Pulls and runs the images on your self-hosted server
+  #      using docker-compose
+  # ───────────────────────────────────────────────────────────
+  deploy:
+    runs-on: [self-hosted, prod]
+    needs: push_images # Waits for image push to succeed
+
+    steps:
+      - name: Docker Login
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Pull and Start Containers
+        run: |
+          # Pull the latest images
+          docker pull somnog/sdt-docs:latest
+          docker start somnog/sdt-docs:latest
