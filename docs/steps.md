@@ -315,3 +315,24 @@ sudo apt-get install python-certbot-nginx
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 sudo certbot --nginx -d crm.feedback.so -d www.crm.feedback.so
 ```
+
+## Instructions
+
+Make sure you have python 3.9 or higher to run the script, since we're using type hints.
+
+```bash
+sudo apt update && sudo apt upgrade -y
+
+```
+
+## Update the python version
+
+```bash
+sudo apt-get install python3.10
+```
+
+## Actions setup in github
+
+Go to your repo -> settings -> acitons -> runner -> new runner -> [runner name]
+
+You will get a script to run in your linux server. just follow the steps and you will be good to go.
