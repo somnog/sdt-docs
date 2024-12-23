@@ -5,7 +5,7 @@ sidebar_position: 3
 
 
 **Presented by**:
-- **Eng. Hassan Omar Mohamed**,  MERN Stack Developer, SIU
+- **Eng. Hassan Omar Mohamed**, Head of Development, SIU
 
 Access the presentation slides here:  
 [Documentation and Resources](../../presentations/241222-SDT-Session-3-Track-MERN_Stack_Overview.pdf)
