@@ -76,4 +76,4 @@ jobs:
         run: |
           # Pull the latest images
           docker pull somnog/sdt-docs
-          docker run -d -p 80:3000 somnog/sdt-docs
+          docker run -d -p 8080:3000 somnog/sdt-docs
