@@ -38,10 +38,6 @@ jobs:
 
       - name: Build docs
         run: |
-          docker build
-
-      - name: Build application
-        run: |
           docker build -t somnog/sdt-docs:latest .
   # ───────────────────────────────────────────────────────────
   # 2) PUSH JOB
