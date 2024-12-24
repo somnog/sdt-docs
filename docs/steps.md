@@ -331,6 +331,16 @@ sudo systemctl status nginx
 sudo systemctl nginx start
 ```
 
+OR
+
+```bash
+
+sudo apt install nginx-core    # version 1.18.0-0ubuntu1.6, or
+sudo apt install nginx-extras  # version 1.18.0-0ubuntu1.6
+sudo apt install nginx-full    # version 1.18.0-0ubuntu1.6
+sudo apt install nginx-light
+```
+
 ## Configure Nginx
 
 ```bash
