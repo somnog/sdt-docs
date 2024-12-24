@@ -11,8 +11,119 @@
 
 ## Create docker files for (Frontend, Backend, Database)
 
-- Create docker compose file
-  [script should be here]
+### Docker file for frontend
+
+```bash
+# Stage 1: Build the React.js application
+FROM node:20-alpine AS builder
+
+# Accept build argument for VITE_APP_API
+ARG VITE_APP_API
+
+# Set environment variable for Vite
+ENV VITE_APP_API=${VITE_APP_API}
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Stage 2: Serve the built app with Nginx
+FROM nginx:stable-alpine
+
+# Remove default Nginx static assets
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy built files from the builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Copy your custom server configuration to conf.d
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+### Docker file for backend API
+
+```bash
+# Stage 1: Build the Express.js application
+FROM node:18-alpine AS builder
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Define the command to run the application
+CMD ["node", "index.js"]
+```
+
+### Create docker compose file
+
+```bash
+services:
+  api:
+    build:
+      context: ./track-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:5000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/mydatabase
+
+  portal:
+    build:
+      context: ./admin-dashboard
+      dockerfile: Dockerfile
+      args:
+        VITE_APP_API: http://api:5000
+    ports:
+      - "8081:80"
+    depends_on:
+      - api
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongo-data:
+```
 
 ## Create Github Actions workflows
 
@@ -316,7 +427,7 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 sudo certbot --nginx -d crm.feedback.so -d www.crm.feedback.so
 ```
 
-## Instructions
+## Instructions on using install.py script
 
 Make sure you have python 3.9 or higher to run the script, since we're using type hints.
 
@@ -336,3 +447,12 @@ sudo apt-get install python3.10
 Go to your repo -> settings -> acitons -> runner -> new runner -> [runner name]
 
 You will get a script to run in your linux server. just follow the steps and you will be good to go.
+
+## Run svc.sh for github actions automation
+
+```bash
+sudo ./svc.sh help
+sudo ./svc.sh install
+sudo ./svc.sh status
+sudo ./svc.sh start
+```
