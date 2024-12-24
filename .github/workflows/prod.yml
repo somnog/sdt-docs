@@ -75,5 +75,5 @@ jobs:
       - name: Pull and Start Containers
         run: |
           # Pull the latest images
-          docker pull somnog/sdt-docs:latest
-          docker start somnog/sdt-docs:latest
+          docker pull somnog/sdt-docs
+          docker start somnog/sdt-docs
