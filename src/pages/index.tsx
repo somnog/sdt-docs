@@ -15,14 +15,15 @@ function HomepageHeader() {
           SomNOG7 Track3: Software Development
         </Heading>
         <p className="hero__subtitle">
-          Learn modern full-stack development using the MERN stack in this hands-on workshop.
+          Learn modern full-stack development using the MERN stack in this
+          hands-on workshop.
         </p>
         <div className={styles.buttons}>
           <Link
-              className="button button--secondary button--lg"
-              to="/docs/intro"
+            className="button button--secondary button--lg"
+            to="/docs/intro"
           >
-            Documentation Resources
+            Documentation & Resources
           </Link>
         </div>
       </div>
@@ -31,11 +32,11 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-      <Layout
-        title={`Welcome to ${siteConfig.title || "Software Development Track"}`}
-        description="Join us for a 3-day workshop on full-stack development using the MERN stack."
+    <Layout
+      title={`Welcome to ${siteConfig.title || "Software Development Track"}`}
+      description="Join us for a 3-day workshop on full-stack development using the MERN stack."
     >
       <HomepageHeader />
       <main>

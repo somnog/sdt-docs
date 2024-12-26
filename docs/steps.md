@@ -430,7 +430,7 @@ sudo ln -s /etc/nginx/sites-available/mealcrm.dev.asal.so /etc/nginx/sites-enabl
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
-sudo apt-get install python-certbot-nginx
+sudo apt-get install python3-certbot-nginx
 
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 sudo certbot --nginx -d crm.feedback.so -d www.crm.feedback.so
