@@ -4,5 +4,5 @@ WORKDIR /docs
 COPY package.json /docs/ 
 RUN npm install 
 COPY . /docs/
-# RUN npm build
-CMD ["npm","start"]
+RUN npm run build
+CMD ["npm","run","serve"]

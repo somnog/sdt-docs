@@ -138,11 +138,11 @@ iv. DATABASE_USERNAME
 v. DATABASE_PASSWORD 4. Ssh to your server
 a. Using Username & Password
 i. ssh username@ipaddress
-ii. <Enter your password>
+ii. `Enter your password`
 b. Using SSH keys
 i. Ssh username@hostname
 c. Using SSH Config
-i. ssh <name>
+i. ssh `name`
 
 Update and upgrade the server
 

@@ -76,4 +76,5 @@ jobs:
         run: |
           # Pull the latest images
           docker pull somnog/sdt-docs
-          docker-compose up -d
+          # dockeer-compose up -d
+          docker run -d -p 3000:3000 somnog/sdt-docs
