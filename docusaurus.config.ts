@@ -85,7 +85,7 @@ const config: Config = {
                     items: [
                         {
                             label: "Tracks",
-                            to: "/docs/intro",
+                            to: "/docs/SomNOG8/intro",
                         },
                     ],
                 },

@@ -7,6 +7,6 @@ sidebar_position: 2
 - **Mohamed A. Abdisamad**, Information Systems Director, NIRA
 
 Access the presentation slides here:  
-[Documentation and Resources](../../presentations/241222-SDT-Session-2-Track-Introduction.pdf)
+[Documentation and Resources](../../../presentations/241222-SDT-Session-2-Track-Introduction.pdf)
 
 ---

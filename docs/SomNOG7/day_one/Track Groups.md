@@ -18,6 +18,6 @@ List of **Software Development Track** groups, their members, and the projects t
 
 
 Access the group projects and details here:  
-[Documentation and Resources](../../presentations/241222-SDT-Group-Projects.pdf)
+[Documentation and Resources](../../../presentations/241222-SDT-Group-Projects.pdf)
 
 ---

@@ -1,0 +1,8 @@
+{
+  "label": "Day One",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Day One of the SomNOG8 Software Development Track introduces participants to the MERN stack, covering the fundamentals of full-stack web development. Sessions focus on JavaScript-based development, React basics, tool setup, and hands-on practical exercises to build a strong foundation for the days ahead."
+  }
+}

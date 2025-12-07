@@ -8,6 +8,6 @@ sidebar_position: 3
 - **Eng. Hassan Omar Mohamed**,  Head of Development, SIU
 
 Access the presentation slides here:  
-[Documentation and Resources](../../presentations/241222-SDT-Session-3-Track-MERN_Stack_Overview.pdf)
+[Documentation and Resources](../../../presentations/241222-SDT-Session-3-Track-MERN_Stack_Overview.pdf)
 
 ---

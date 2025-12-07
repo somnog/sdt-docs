@@ -12,7 +12,7 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          SomNOG7 Track3: Software Development
+          SomNOG8 Track3: Software Development
         </Heading>
         <p className="hero__subtitle">
           Learn modern full-stack development using the MERN stack in this
