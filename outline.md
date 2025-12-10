@@ -1,0 +1,5 @@
+services:
+frontend:
+image: somnog/sdt-docs
+ports: - 3000:3000
+restart: always
