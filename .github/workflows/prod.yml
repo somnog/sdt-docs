@@ -18,7 +18,7 @@ jobs:
     # Otherwise, you can omit the strategy matrix.
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
     env:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
